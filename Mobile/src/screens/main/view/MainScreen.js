@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 
 export default class MainScreen extends Component {
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: '#ddd' }}>
+            <View style={{ flex: 1, backgroundColor: '#ddd' }} >
+                <Text> MainScreen </Text>
             </View>
         );
     }
