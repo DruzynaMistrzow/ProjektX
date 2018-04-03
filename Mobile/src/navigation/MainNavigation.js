@@ -5,8 +5,7 @@ import { MainScreen } from '../screens';
 const MainNavigator = DrawerNavigator(
     {
         main: {
-            screen: MainScreen,
-            path: 'MainScreen',
+            screen: MainScreen
         }
     },
     {

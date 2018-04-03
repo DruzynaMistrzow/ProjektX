@@ -5,13 +5,16 @@ import { RegistrationScreen } from '../screens';
 const RegistrationNavigator = StackNavigator(
     {
         registration: {
-            screen: RegistrationScreen,
-            path: 'RegistrationScreen',
+            screen: RegistrationScreen
         }
     },
     {
-        initialRouteName: 'main'
+        initialRouteName: 'registration',
+        headerMode: 'none',
+        cardStyle: {
+            backgroundColor: 'white'
+        }
     }
 );
 
-export default RegistrationScreen;
+export default RegistrationNavigator;
