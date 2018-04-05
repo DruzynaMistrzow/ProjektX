@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default class Header extends Component {
 
+
     render() {
         return (
             <View style={styles.header}>
@@ -25,6 +26,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#bec6ff',
         fontWeight: 'bold',
-        fontSize: 18,
+        fontSize: 24,
     }
 });

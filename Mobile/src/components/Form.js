@@ -4,7 +4,6 @@ import { Text, View, StyleSheet, Button } from 'react-native';
 export default class Form extends Component {
 
     render() {
-        console.log(this.props)
         return (
             <View style={styles.outerContainer}>
                 <View style={styles.innerContainer}>
