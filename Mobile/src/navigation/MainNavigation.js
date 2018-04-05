@@ -1,11 +1,15 @@
 import { DrawerNavigator } from 'react-navigation';
 
-import { MainScreen } from '../screens';
+import { MainScreen, MapScreen } from '../screens';
+
 
 const MainNavigator = DrawerNavigator(
     {
         main: {
             screen: MainScreen
+        },
+        map: {
+            screen: MapScreen
         }
     },
     {
