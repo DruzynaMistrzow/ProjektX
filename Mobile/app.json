@@ -4,6 +4,13 @@
     "androidStatusBar": {
       "barStyle": "dark-content",
       "backgroundColor": "#C2185B"
+    },
+    "android": {
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBWvfyF7pOjRBOYo3DXsrlpUuQGJfLZ8nU"
+        }
+      }
     }
   }
 }
