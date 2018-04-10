@@ -26,6 +26,6 @@
     "react-navigation": "^1.5.9",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
-    "@expo/vector-icons": "latest"
+    "@expo/vector-icons": "^6.3.1"
   }
 }
