@@ -20,13 +20,13 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo/vector-icons": "^6.3.1",
     "expo": "^26.0.0",
     "react": "16.3.0-alpha.1",
     "react-native": "0.54.0",
+    "react-native-elements": "^1.0.0-beta",
     "react-navigation": "^1.5.9",
     "react-redux": "^5.0.7",
-    "redux": "^3.7.2",
-    "@expo/vector-icons": "^6.3.1",
-    "react-native-elements": "latest"
+    "redux": "^3.7.2"
   }
 }
