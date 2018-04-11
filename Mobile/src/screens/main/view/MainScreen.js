@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import { Screen, ButtonSelector } from '../../../components';
 import Commons from '../../../assets/themes/Commons';
 
@@ -26,10 +26,10 @@ export default class MainScreen extends Component {
                 />
                 <Text style={{ fontSize: 32 }}>{this.state.range === 'Day' ? '100' : '30000'}</Text>
                 <View style={Commons.viewCenter}>
-                    <FontAwesome name="user-circle-o" size={128} color="green" />
+                    <Ionicons name="ios-contact" size={128} color="green" />
                     <View style={{ flexDirection: 'row' }}>
-                        <FontAwesome
-                            name="flag-o"
+                        <Ionicons
+                            name="ios-flag"
                             size={48}
                             color="red"
                             style={{ paddingHorizontal: 10 }}
