@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {ScrollView, StyleSheet, Text} from 'react-native';
+import { ScrollView, StyleSheet, Text, Alert } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { Screen } from '../../../components';
+import ButtonSelector from '../../../components/ButtonSelector';
 
 const list = [
     {
@@ -18,10 +19,17 @@ const list = [
 
 export default class RankingScreen extends Component {
 
+    onSelect=(index) => {
+        console.log(`wcisnieto ${index}`);
+    };
 
     render() {
         return (
             <Screen title="Ranking">
+                <ButtonSelector
+                    buttons={['Day', 'Week', 'Month', 'All']}
+                    onSelect={this.onSelect}
+                />
                 <ScrollView>
                 {list.map((item, index) => (
                         <ListItem
@@ -40,7 +48,6 @@ export default class RankingScreen extends Component {
             </Screen>
         );
     }
-
 }
 
 const styles = StyleSheet.create({

@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
-import { FlatList, Picker, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { Screen } from '../../../components';
+import { Screen, ButtonSelector } from '../../../components';
 import Commons from '../../../assets/themes/Commons';
 
 
 export default class MainScreen extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             range: '',
         };
     }
 
+    onSelect=(index) => {
+        console.log(`wcisnieto ${index}`);
+    };
+
     render() {
         return (
             <Screen title="Account">
-                <Picker
-                    selectedValue={this.state.range}
-                    onValueChange={(itemValue) => this.setState({ range: itemValue })}
-                    mode='dropdown'
-                >
-                    <Picker.Item label="Day" value="Day" />
-                    <Picker.Item label="Week" value="Week" />
-                    <Picker.Item label="Month" value="Month" />
-                    <Picker.Item label="All" value="All" />
-                </Picker>
+                <ButtonSelector
+                    buttons={['Day', 'Week', 'Month', 'All']}
+                    onSelect={this.onSelect}
+                />
                 <Text style={{ fontSize: 32 }}>{this.state.range === 'Day' ? '100' : '30000'}</Text>
                 <View style={Commons.viewCenter}>
                     <FontAwesome name="user-circle-o" size={128} color="green" />
