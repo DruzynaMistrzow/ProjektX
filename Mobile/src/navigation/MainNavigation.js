@@ -1,6 +1,6 @@
 import { DrawerNavigator } from 'react-navigation';
 
-import { MainScreen, MapScreen } from '../screens';
+import { MainScreen, MapScreen, RankingScreen } from '../screens';
 
 
 const MainNavigator = DrawerNavigator(
@@ -10,6 +10,9 @@ const MainNavigator = DrawerNavigator(
         },
         map: {
             screen: MapScreen
+        },
+        ranking: {
+            screen: RankingScreen
         }
     },
     {
