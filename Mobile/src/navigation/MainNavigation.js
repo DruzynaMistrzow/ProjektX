@@ -40,6 +40,9 @@ const MainNavigator = DrawerNavigator(
             labelStyle: { fontSize: 18 },
             iconContainerStyle: { width: 35 },
         },
+        navigationOptions: {
+            drawerLockMode: 'locked-closed'
+        },
     }
 );
 
