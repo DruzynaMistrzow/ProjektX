@@ -1,6 +1,10 @@
-import { combineReducers } from 'redux';
+import { persistCombineReducers } from 'redux-persist';
+import { AsyncStorage } from 'react-native';
 import registration from './registrationReducer';
 
-export default combineReducers({
-    registration
-});
+const config = {
+      key: 'primary',
+      storage: AsyncStorage,
+};
+
+export default persistCombineReducers(config, { registration });

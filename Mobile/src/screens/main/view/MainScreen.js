@@ -4,7 +4,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { Screen, ButtonSelector } from '../../../components';
 import Commons from '../../../assets/themes/Commons';
 
-
 export default class MainScreen extends Component {
     constructor(props) {
         super(props);
