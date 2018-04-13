@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import {DrawerItems} from 'react-navigation';
+import Divider from "../components/Divider";
 
 
 const Drawer = (props) => (
@@ -8,6 +9,7 @@ const Drawer = (props) => (
         <View style={styles.drawerHeaderContainer}>
             <Text style={styles.drawerHeaderText}>MENU</Text>
         </View>
+        <Divider />
         <DrawerItems {...props} />
     </View>
 );
@@ -21,8 +23,6 @@ const styles = StyleSheet.create({
     drawerHeaderContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        borderBottomWidth: 0.5,
-        borderBottomColor: '#d4d3cf',
         padding: 15,
     },
     drawerHeaderText: {

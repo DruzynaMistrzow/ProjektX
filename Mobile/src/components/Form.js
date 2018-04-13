@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
+import Divider from "./Divider";
 
 export default class Form extends Component {
 
@@ -11,13 +12,13 @@ export default class Form extends Component {
                         <Text style={styles.header}>
                             {this.props.header}
                         </Text>
-                        <View style={styles.divider} />
+                        <Divider />
                     </View>
                     <View style={styles.childContainer}>
                         {this.props.children}
                     </View>
 
-                    <View style={styles.divider} />
+                    <Divider />
 
                     <View style={styles.buttonsContainer} >
                         <Button
