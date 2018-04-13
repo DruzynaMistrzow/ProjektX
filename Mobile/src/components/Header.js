@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { MyHamburger } from './';
+
 
 export default class Header extends Component {
 
@@ -16,7 +18,9 @@ export default class Header extends Component {
                         {this.props.headerTitle}
                     </Text>
                 </View>
-                <View style={styles.left} />
+                <View style={styles.left}>
+                    <Ionicons name="ios-power" size={35} color="white" />
+                </View>
             </View>
         );
     }
