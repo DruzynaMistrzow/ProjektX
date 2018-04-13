@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native';
 import { withNavigation } from 'react-navigation';
 
 class MyHamburger extends Component {
-//this.props.navigation.navigate('DrawerOpen')
+
     render() {
         return (
             <TouchableOpacity onPress={() => this.props.navigation.navigate('DrawerOpen')}>

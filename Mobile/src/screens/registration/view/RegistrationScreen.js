@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
 import { connect } from 'react-redux';
 import { Form } from '../../../components';
-import { REGISTRATION } from '../../../actions/types';
+import { LOGIN } from '../../../actions/types';
 
 @connect((store) => ({
     registration: store.registration,
@@ -28,7 +28,7 @@ export default class RegistrationScreen extends Component {
                     </View>
                 </Form>
                 <Button
-                    onPress={() => this.props.dispatch({ type: REGISTRATION, payload: true })}
+                    onPress={() => this.props.dispatch({ type: LOGIN })}
                     title="Register"
                     color="#841584"
                     accessibilityLabel="Learn more about this purple button"

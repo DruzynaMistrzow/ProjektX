@@ -13,7 +13,7 @@ export default class NavigationContainer extends Component {
     render() {
         let properNavigator = null;
 
-        if (this.props.registration.isUserRegistered) {
+        if (this.props.registration.isUserLoggedIn) {
             properNavigator = (<MainNavigation
                 onNavigationStateChange={(prevState, currentState) => {
                     const routeKey = currentState.routes[currentState.index].key;

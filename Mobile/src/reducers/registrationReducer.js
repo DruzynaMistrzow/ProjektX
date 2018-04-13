@@ -1,9 +1,11 @@
 import {
-    REGISTRATION
+    REGISTRATION,
+    LOGIN,
+    LOGOUT
 } from '../actions/types';
 
 const INITIAL_STATE = {
-    isUserRegistered: false
+    isUserLoggedIn: false
 };
 
 
@@ -12,7 +14,19 @@ export default (state = INITIAL_STATE, action) => {
         case REGISTRATION: {
             return {
                 ...state,
-                isUserRegistered: action.payload
+                isUserLoggedIn: action.payload
+            };
+        }
+        case LOGIN: {
+            return {
+                ...state,
+                isUserLoggedIn: true
+            };
+        }
+        case LOGOUT: {
+            return {
+                ...state,
+                isUserLoggedIn: false
             };
         }
         default:
