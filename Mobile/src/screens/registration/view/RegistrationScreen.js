@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {Button, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import {connect} from 'react-redux';
-import {Form} from '../../../components';
-import {LOGIN, REGISTRATION} from '../../../actions/types';
+import React, { Component } from 'react';
+import { Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { connect } from 'react-redux';
+import { Form } from '../../../components';
+import { LOGIN, REGISTRATION } from '../../../actions/types';
 import Commons from '../../../assets/themes/Commons';
 
 @connect((store) => ({
@@ -54,9 +54,9 @@ export default class RegistrationScreen extends Component {
                     onPress={() => this.setState({
                         formType: formType === 'registration' ? 'login' : 'registration'
                     })}
-                    style={{padding: 10}}
+                    style={{ padding: 10 }}
                 >
-                    <Text style={{textAlign: 'center'}}>
+                    <Text style={{ textAlign: 'center' }}>
                         {formType === 'registration' ?
                             'Already registered? Login me!'
                             : 'Not a member? Sign up now!'
@@ -69,12 +69,12 @@ export default class RegistrationScreen extends Component {
 
     renderLoginForm() {
         return (
-            <View style={{flex: 1, backgroundColor: '#eea'}}>
+            <View style={{ flex: 1, backgroundColor: '#eea' }}>
                 <Form
                     header={<Text>Login</Text>}
                     footer={<Text>Stopka</Text>}
                 >
-                    <View style={{alignItems: 'center', backgroundColor: '#ddd'}}>
+                    <View style={{ alignItems: 'center', backgroundColor: '#ddd' }}>
                         <TextInput
                             placeholder='Username'
                             underlineColorAndroid="transparent"
