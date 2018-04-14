@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
-import Divider from "./Divider";
+import { Text, View, StyleSheet } from 'react-native';
+import Divider from './Divider';
 
 export default class Form extends Component {
 
@@ -9,7 +9,7 @@ export default class Form extends Component {
             <View style={styles.outerContainer}>
                 <View style={styles.innerContainer}>
                     <View>
-                        <Text style={styles.header}>
+                        <Text style={styles.headerText}>
                             {this.props.header}
                         </Text>
                         <Divider />
@@ -20,13 +20,8 @@ export default class Form extends Component {
 
                     <Divider />
 
-                    <View style={styles.buttonsContainer} >
-                        <Button
-                            onPress={() => console.log('register')}
-                            title="Register"
-                            color="#841584"
-                            accessibilityLabel="Learn more about this purple button"
-                        />
+                    <View style={styles.footerContainer} >
+                        {this.props.footer}
                     </View>
                 </View>
             </View>
@@ -52,23 +47,17 @@ const styles = StyleSheet.create({
         borderRadius: 3
 
     },
-    header: {
+    headerText: {
         textAlign: 'center',
         color: '#35c535',
+        fontSize: 20,
         fontWeight: 'bold',
         paddingBottom: 20
     },
     childContainer: {
         padding: 10,
     },
-    buttonsContainer: {
-        backgroundColor: 'white',
-        flexDirection: 'row',
-        paddingVertical: 20,
+    footerContainer: {
+        padding: 10,
     },
-    divider: {
-        borderBottomColor: 'gray',
-        borderBottomWidth: 1,
-        marginVertical: 0
-    }
 });
