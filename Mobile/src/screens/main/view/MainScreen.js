@@ -3,10 +3,11 @@ import { Text, View, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Expo from 'expo';
 import { connect } from 'react-redux';
-import { Screen, ButtonSelector } from '../../../components';
+import { Screen } from '../../../components';
 import Commons from '../../../assets/themes/Commons';
 import { ADD_METERS } from '../../../actions/types';
 import Utils from '../../../utilities/Utils';
+import { LOCATION_TRACKING_INTERVAL } from '../../../constants';
 
 
 @connect((store) => ({
@@ -26,7 +27,6 @@ export default class MainScreen extends Component {
             const oldCoords = this.state.currentCoords;
             const newCoords = await Expo.Location.getCurrentPositionAsync({
                 enableHighAccuracy: true,
-                maximumAge: 5000
             });
             if (oldCoords !== null) {
                 this.props.dispatch({
@@ -35,32 +35,16 @@ export default class MainScreen extends Component {
                 });
             }
             this.setState({ currentCoords: newCoords });
-        }, 5000);
+        }, LOCATION_TRACKING_INTERVAL);
     };
 
     componentWillUnmount() {
         clearInterval(this.locationTrackerInterval);
     }
 
-
-    renderLocation() {
-        return (
-            <View style={styles.container}>
-                <Text style={styles.paragraph}>{JSON.stringify(this.state.currentCoords)}</Text>
-            </View>
-        );
-    }
-
     render() {
         return (
             <Screen title="Account">
-                <ButtonSelector
-                    buttons={['Day', 'Week', 'Month', 'All']}
-                    onSelect={this.onSelect}
-                />
-                <Text style={{ fontSize: 32 }}>
-                    {`Distance: ${this.props.user.distance}`}
-                </Text>
                 <View style={Commons.viewCenter}>
                     <Ionicons name="ios-contact" size={128} color="green" />
                     <View style={{ flexDirection: 'row' }}>
@@ -73,22 +57,24 @@ export default class MainScreen extends Component {
                         <Text style={{ fontSize: 32 }}>{this.props.user.username}</Text>
                     </View>
                     <Text style={{ fontSize: 24 }}>#51</Text>
-                    {this.renderLocation()}
+                    <View style={styles.distanceContainer}>
+                        <Text style={{ fontSize: 32 }}>
+                            {`Distance: ${this.props.user.distance} m`}
+                        </Text>
+                    </View>
                 </View>
             </Screen>
         );
     }
 }
 const styles = StyleSheet.create({
+    distanceContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     container: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#ecf0f1',
-    },
-    paragraph: {
-        margin: 24,
-        fontSize: 18,
-        textAlign: 'center',
     },
 });
