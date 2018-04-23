@@ -12,8 +12,11 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 Route::post('login', 'API\PassportController@login');
 Route::post('register', 'API\PassportController@register');
+
+//Route::resource('pages', 'PageController');
 
 Route::group(['middleware' => 'auth:api'], function(){
 	Route::post('get-details', 'API\PassportController@getDetails');
